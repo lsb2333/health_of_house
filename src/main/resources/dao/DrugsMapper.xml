@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+              "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+              
+ <mapper namespace="com.example.demo.dao.DrugsMapper">
+ 	<!--SQL片段  -->
+ 	<sql id="selectDrugsListWhere">
+ 		<where>
+ 			<if test="username != null">
+ 				username like '%' #{username} '%'
+ 			</if>
+ 			<if test="describes != null">
+ 			And	describes like '%' #{describes} '%'
+ 			</if>
+ 		</where>
+	</sql>
+	<select id="selectDrugsList" parameterType="Drugs" resultType="Drugs">
+		select * from drugs
+		<!--执行分页查询  -->
+		<include refid="selectDrugsListWhere"/>
+		<if test="start != null and rows != null">
+			limit #{start} ,#{rows}
+		</if>
+	</select>
+	<!--查询客户总数  -->
+	<select id="selectDrugsListCount" parameterType="Drugs" resultType="Integer">
+		select count(*) from drugs
+		
+		<include refid="selectDrugsListWhere"/>
+	</select>
+	<insert id="createDrugs" parameterType="Drugs">
+		
+		insert into drugs(image,username,price,stock,describes,term) 
+		values(#{image},#{username},#{price},#{stock},#{describes},#{term})
+	</insert>
+	<!--删除用户  -->
+	<delete id="deleteDrugs" parameterType="Integer">
+		delete from drugs where id = #{id}
+	</delete>
+	<!--根据id查询客户  -->
+	<select id="findDrugsById" parameterType="Integer" resultType="Drugs">
+		select * from drugs where id = #{id}
+	</select>
+	<!--更新用户  -->
+	<update id="updateDrugs" parameterType="Drugs">
+ 		update drugs 
+ 		<set>
+ 			<if test="username != null">
+ 				username=#{username},
+ 			</if>
+ 			<if test="price != null">
+ 				price=#{price},
+ 			</if>
+ 			<if test="stock != null">
+ 				stock=#{stock},
+ 			</if>
+ 			<if test="describes != null">
+ 				describes=#{describes},
+ 			</if>
+ 			<if test="term != null">
+ 				term=#{term},
+ 			</if>
+ 		</set>
+ 		 where id=#{id}
+ 	</update>
+ </mapper>

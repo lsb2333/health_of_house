@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+              "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+              
+ <mapper namespace="com.example.demo.dao.DoctorMapper">
+ 	<!--SQL片段  -->
+ 	<sql id="selectDoctorListWhere">
+ 		<where>
+ 			<if test="username != null">
+ 				username like '%' #{username} '%'
+ 			</if>
+ 		</where>
+	</sql>
+	<select id="selectDoctorList" parameterType="Doctor" resultType="Doctor">
+		select * from doctor
+		<!--执行分页查询  -->
+		<include refid="selectDoctorListWhere"/>
+		<if test="start != null and rows != null">
+			limit #{start} ,#{rows}
+		</if>
+	</select>
+	<!--查询客户总数  -->
+	<select id="selectDoctorListCount" parameterType="Doctor" resultType="Integer">
+		select count(*) from doctor
+		
+		<include refid="selectDoctorListWhere"/>
+	</select>
+	<insert id="createDoctor" parameterType="Doctor">
+		
+		insert into doctor(image,username,section,describes,recommendation,years) 
+		values(#{image},#{username},#{section},#{describes},#{recommendation},#{years})
+	</insert>
+	<!--删除用户  -->
+	<delete id="deleteDoctor" parameterType="Integer">
+		delete from doctor where id = #{id}
+	</delete>
+	<!--根据id查询客户  -->
+	<select id="findDoctorById" parameterType="Integer" resultType="Doctor">
+		select * from doctor where id = #{id}
+	</select>
+	<!--更新用户  -->
+	<update id="updateDoctor" parameterType="Doctor">
+ 		update doctor 
+ 		<set>
+ 			<if test="username != null">
+ 				username=#{username},
+ 			</if>
+ 			<if test="section != null">
+ 				section=#{section},
+ 			</if>
+ 			<if test="describes != null">
+ 				describes=#{describes},
+ 			</if>
+ 			<if test="recommendation != null">
+ 				recommendation=#{recommendation},
+ 			</if>
+ 			<if test="years != null">
+ 				years=#{years},
+ 			</if>
+ 		</set>
+ 		 where id=#{id}
+ 	</update>
+ </mapper>

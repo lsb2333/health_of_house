@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+              "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.example.demo.dao.DiseaseMapper">
+ 	
+	<select id="selectDiseaseList" parameterType="Disease" resultType="Disease">
+		select * from disease
+		<!--执行分页查询  -->
+		<if test="start != null and rows != null">
+			limit #{start} ,#{rows}
+		</if>
+	</select>
+	<!--查询客户总数  -->
+	<select id="selectDiseaseListCount" parameterType="Disease" resultType="Integer">
+		select count(*) from disease
+	</select>
+ </mapper>

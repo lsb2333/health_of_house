@@ -1,0 +1,48 @@
+
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: darkgrey;
+			}
+			h3{
+				margin-top: 20px;
+				color:#4590BB;
+				text-align: center;
+			}
+			#box {
+				margin: 0 auto;
+				color: #7FFFD4;	
+				width: 400px;
+				height: 450px;
+				background-color: white;
+				box-shadow: 10px 10px 15px black;
+			}
+			#table{
+				text-align: center;
+				
+			}
+			#table .type{
+				margin-top: 10px;
+			}
+			#table .type1{
+				margin-top: 10px;
+				width: 80px;
+				height: 25px;
+				padding: 3px;
+				background-color: #4590BB;
+				color: white;
+			}
+			#describes{
+				border: 1px aqua solid;
+				width: 132px;
+				height: 50px;
+				border-radius: 8px;
+			}
+			#border{
+				border: 1px aqua solid;
+				border-radius: 8px;
+			}
+			#left1{
+				margin-left: 90px;
+			}
+			

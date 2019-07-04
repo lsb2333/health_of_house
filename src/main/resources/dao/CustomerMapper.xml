@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+              "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+              
+<mapper namespace="com.example.demo.dao.CustomerMapper">
+	<!--SQL片段  -->
+ 	<sql id="selectCustomerListWhere">
+ 		<where>
+ 			<if test="username != null">
+ 				username like '%' #{username} '%'
+ 			</if>
+ 		</where>
+	</sql>
+	<select id="selectCustomerList" parameterType="Customer" resultType="Customer">
+		select * from customer
+		<!--执行分页查询  -->
+		<include refid="selectCustomerListWhere"/>
+		<if test="start != null and rows != null">
+			limit #{start} ,#{rows}
+		</if>
+	</select>
+	<!--查询客户总数  -->
+	<select id="selectCustomerListCount" parameterType="Customer" resultType="Integer">
+		select count(*) from customer
+		
+		<include refid="selectCustomerListWhere"/>
+	</select>
+	<insert id="createCustomer" parameterType="Customer">
+		insert into customer(username,password,names,email,phone) values(#{username},#{password},#{names},#{email},#{phone})
+	</insert>
+	<!--删除用户  -->
+	<delete id="deleteCustomer" parameterType="Integer">
+		delete from customer where id = #{id}
+	</delete>
+	<!--根据id查询客户  -->
+	<select id="findById" parameterType="Integer" resultType="Customer">
+		select * from customer where id = #{id}
+	</select>
+	<!--更新用户  -->
+	<update id="updateCustomer" parameterType="Customer">
+ 		update customer 
+ 		<set>
+ 			<if test="username != null">
+ 				username=#{username},
+ 			</if>
+ 			<if test="password != null">
+ 				password=#{password},
+ 			</if>
+ 			<if test="names != null">
+ 				names=#{names},
+ 			</if>
+ 			<if test="email != null">
+ 				email=#{email},
+ 			</if>
+ 			<if test="phone != null">
+ 				phone=#{phone},
+ 			</if>
+ 		</set>
+ 		 where id=#{id}
+ 	</update>
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+              "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.example.demo.dao.Health_InsuranceMapper">
+ 	
+	<select id="selectHealth_InsuranceList" parameterType="Health_Insurance" resultType="Health_Insurance">
+		select * from health_Insurance
+		<!--执行分页查询  -->
+		<if test="start != null and rows != null">
+			limit #{start} ,#{rows}
+		</if>
+	</select>
+	<!--查询客户总数  -->
+	<select id="selectHealth_InsuranceListCount" parameterType="Health_Insurance" resultType="Integer">
+		select count(*) from health_Insurance
+	</select>
+ </mapper>
