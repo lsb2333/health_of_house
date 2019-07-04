@@ -18,17 +18,17 @@
 <title>客户管理-BootCRM</title>
 <!-- 引入css样式文件 -->
 <!-- Bootstrap Core CSS -->
-<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath }/css/bootstrap.min.css" rel="stylesheet" />
 <!-- MetisMenu CSS -->
-<link href="<%=basePath%>css/metisMenu.min.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath }/css/metisMenu.min.css" rel="stylesheet" />
 <!-- DataTables CSS -->
-<link href="<%=basePath%>css/dataTables.bootstrap.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath }/css/dataTables.bootstrap.css" rel="stylesheet" />
 <!-- Custom CSS -->
-<link href="<%=basePath%>css/sb-admin-2.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath }/css/sb-admin-2.css" rel="stylesheet" />
 <!-- Custom Fonts -->
-<link href="<%=basePath%>css/font-awesome.min.css" rel="stylesheet"
+<link href="${pageContext.request.contextPath }/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css" />
-<link href="<%=basePath%>css/boot-crm.css" rel="stylesheet"
+<link href="${pageContext.request.contextPath }/css/boot-crm.css" rel="stylesheet"
 	type="text/css" />
 <style type="text/css">
 table .img {
@@ -44,7 +44,7 @@ table .img {
 			style="margin-bottom: 0">
 			<div class="navbar-header">
 				<a class="navbar-brand"
-					href="<%=basePath%>/customer/main.action">BOOT客户管理系统
+					href="${pageContext.request.contextPath }/customer/main.action">BOOT客户管理系统
 					v2.0</a>
 			</div>
 			<!-- 导航栏右侧图标部分 -->
@@ -430,21 +430,21 @@ table .img {
 	<!-- 客户列表查询部分  end-->
 	<!-- 引入js文件 -->
 	<!-- jQuery -->
-	<script src="<%=basePath%>js/jquery-1.11.3.min.js"></script>
+	<script src="${pageContext.request.contextPath }/js/jquery-1.11.3.min.js"></script>
 	<!-- Bootstrap Core JavaScript -->
-	<script src="<%=basePath%>js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath }/js/bootstrap.min.js"></script>
 	<!-- Metis Menu Plugin JavaScript -->
-	<script src="<%=basePath%>js/metisMenu.min.js"></script>
+	<script src="${pageContext.request.contextPath }/js/metisMenu.min.js"></script>
 	<!-- DataTables JavaScript -->
-	<script src="<%=basePath%>js/jquery.dataTables.min.js"></script>
-	<script src="<%=basePath%>js/dataTables.bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath }/js/jquery.dataTables.min.js"></script>
+	<script src="${pageContext.request.contextPath }/js/dataTables.bootstrap.min.js"></script>
 	<!-- Custom Theme JavaScript -->
-	<script src="<%=basePath%>js/sb-admin-2.js"></script>
+	<script src="${pageContext.request.contextPath }/js/sb-admin-2.js"></script>
 	<script type="text/javascript">
 	
 	//创建用户
 	function createCustomer(){
-		$.post("<%=basePath%>/customer/add",
+		$.post("${pageContext.request.contextPath }/customer/add",
 		$("#new_customer_form").serialize(),function(data){
 			if(data=="OK"){
 				alert("创建用户成功！");
@@ -459,7 +459,7 @@ table .img {
 	//删除用户
 	function deleteAll(id) {
 	    if(confirm('确实要删除该客户吗?')) {
-		$.post("<%=basePath%>/customer/deleteId",
+		$.post("${pageContext.request.contextPath }/customer/deleteId",
 		{"id":id},
 		function(data){
 	            if(data == "OK"){
@@ -477,7 +477,7 @@ table .img {
 	function editCustomer(id){
 		$.ajax({
 			type: "post",
-			url : "<%=basePath%>/customer/byId",
+			url : "${pageContext.request.contextPath }/customer/byId",
 			data: {"id":id},
 			success:function(data){
 				$("#edit_id").val(data.id);
@@ -492,7 +492,7 @@ table .img {
 	
 	//根据查询ID进行修改
 	function editCustomerDialogAll(){
-		$.post("<%=basePath%>/customer/Update",
+		$.post("${pageContext.request.contextPath }/customer/Update",
 		$("#edit_customer_form").serialize(),
 		function(data){
 			if(data == "OK"){

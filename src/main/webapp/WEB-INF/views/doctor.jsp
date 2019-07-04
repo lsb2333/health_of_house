@@ -18,16 +18,16 @@
 	<title>客户管理-BootCRM</title>
 	<!-- 引入css样式文件 -->
 	<!-- Bootstrap Core CSS -->
-	<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath }/css/bootstrap.min.css" rel="stylesheet" />
 	<!-- MetisMenu CSS -->
-	<link href="<%=basePath%>css/metisMenu.min.css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath }/css/metisMenu.min.css" rel="stylesheet" />
 	<!-- DataTables CSS -->
-	<link href="<%=basePath%>css/dataTables.bootstrap.css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath }/css/dataTables.bootstrap.css" rel="stylesheet" />
 	<!-- Custom CSS -->
-	<link href="<%=basePath%>css/sb-admin-2.css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath }/css/sb-admin-2.css" rel="stylesheet" />
 	<!-- Custom Fonts -->
-	<link href="<%=basePath%>css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="<%=basePath%>css/boot-crm.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath }/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath }/css/boot-crm.css" rel="stylesheet" type="text/css" />
 	<style type="text/css">
 	table .img{
 		width:70px;
@@ -50,7 +50,7 @@
   <nav class="navbar navbar-default navbar-static-top" role="navigation"
 		 style="margin-bottom: 0">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="<%=basePath%>/customer/main.action">BOOT客户管理系统 v2.0</a>
+		<a class="navbar-brand" href="${pageContext.request.contextPath }/customer/main.action">BOOT客户管理系统 v2.0</a>
 	</div>
 	<!-- 导航栏右侧图标部分 -->
 	<ul class="nav navbar-top-links navbar-right">
@@ -364,20 +364,20 @@
 	<!-- 客户列表查询部分  end-->
 	<!-- 引入js文件 -->
 	<!-- jQuery -->
-	<script src="<%=basePath%>js/jquery-1.11.3.min.js"></script>
+	<script src="${pageContext.request.contextPath }/js/jquery-1.11.3.min.js"></script>
 	<!-- Bootstrap Core JavaScript -->
-	<script src="<%=basePath%>js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath }/js/bootstrap.min.js"></script>
 	<!-- Metis Menu Plugin JavaScript -->
-	<script src="<%=basePath%>js/metisMenu.min.js"></script>
+	<script src="${pageContext.request.contextPath }/js/metisMenu.min.js"></script>
 	<!-- DataTables JavaScript -->
-	<script src="<%=basePath%>js/jquery.dataTables.min.js"></script>
-	<script src="<%=basePath%>js/dataTables.bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath }/js/jquery.dataTables.min.js"></script>
+	<script src="${pageContext.request.contextPath }/js/dataTables.bootstrap.min.js"></script>
 	<!-- Custom Theme JavaScript -->
-	<script src="<%=basePath%>js/sb-admin-2.js"></script>
+	<script src="${pageContext.request.contextPath }/js/sb-admin-2.js"></script>
 	<script type="text/javascript">
 	function deleteAll(id) {
 	    if(confirm('确实要删除该客户吗?')) {
-	$.post("<%=basePath%>/doctor/deleteId",{"id":id},
+	$.post("${pageContext.request.contextPath }/doctor/deleteId",{"id":id},
 	function(data){
 	            if(data =="OK"){
 	                alert("客户删除成功！");
