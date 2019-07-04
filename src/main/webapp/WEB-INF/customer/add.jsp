@@ -10,7 +10,7 @@
 </script>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath }/xiaosheng/customer/add" method="post" onsubmit="return addAll()">
+	<form action="${pageContext.request.contextPath }/customer/add" method="post" onsubmit="return addAll()">
 		用户名：<input type="text" name="username"  required="required"><br><br>
 		密码：<input type="text" name="password"  required="required"><br><br>
 		网名：<input type="text" name="names"  required="required" ><br><br>

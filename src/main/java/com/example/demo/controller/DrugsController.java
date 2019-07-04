@@ -83,7 +83,7 @@ public class DrugsController {
 		drugs.setDescribes(describes);
 		drugs.setTerm(term);
 		drugsService.createDrugs(drugs);
-		return "redirect:/xiaosheng/drugs/main.action";
+		return "redirect:/drugs/main.action";
 	}
 	
 	//删除用户
@@ -111,6 +111,6 @@ public class DrugsController {
 	@RequestMapping("/drugs/Update")
 	public String update(Drugs drugs) {
 		drugsService.updateDrugs(drugs);
-		return "redirect:/xiaosheng/drugs/main.action";
+		return "redirect:/drugs/main.action";
 	}
 }

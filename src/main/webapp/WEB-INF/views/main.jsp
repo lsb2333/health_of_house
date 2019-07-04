@@ -44,7 +44,7 @@ table .img {
 			style="margin-bottom: 0">
 			<div class="navbar-header">
 				<a class="navbar-brand"
-					href="<%=basePath%>xiaosheng/customer/main.action">BOOT客户管理系统
+					href="<%=basePath%>/customer/main.action">BOOT客户管理系统
 					v2.0</a>
 			</div>
 			<!-- 导航栏右侧图标部分 -->
@@ -160,7 +160,7 @@ table .img {
 						<li><a href="#"><i class="fa fa-gear fa-fw"></i> 系统设置</a></li>
 						<li class="divider"></li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/outlogin">
+							href="${pageContext.request.contextPath }/outlogin">
 								<i class="fa fa-sign-out fa-fw"></i>退出登录
 						</a></li>
 					</ul></li>
@@ -181,51 +181,51 @@ table .img {
 							</div>
 						</li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/customer/main.action"
+							href="${pageContext.request.contextPath }/customer/main.action"
 							class="active"> <i class="fa fa-edit fa-fw"></i> 客户管理
 						</a></li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/drugs/main.action">
+							href="${pageContext.request.contextPath }/drugs/main.action">
 								<i class="fa fa-dashboard fa-fw"></i> 药品管理
 						</a></li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/doctor/main.action">
+							href="${pageContext.request.contextPath }/doctor/main.action">
 								<i class="fa fa-edit fa-fw"></i> 医生管理
 						</a></li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/management/main.action">
+							href="${pageContext.request.contextPath }/management/main.action">
 								<i class="fa fa-dashboard fa-fw"></i> 健康管理
 						</a></li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/disease/main.action">
+							href="${pageContext.request.contextPath }/disease/main.action">
 								<i class="fa fa-edit fa-fw"></i> 疾病症状管理
 						</a></li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/physicians/main.action">
+							href="${pageContext.request.contextPath }/physicians/main.action">
 								<i class="fa fa-dashboard fa-fw"></i> 医师讲解管理
 						</a></li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/diseasecounseling/main.action">
+							href="${pageContext.request.contextPath }/diseasecounseling/main.action">
 								<i class="fa fa-edit fa-fw"></i> 疾病咨询管理
 						</a></li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/appointment/main.action">
+							href="${pageContext.request.contextPath }/appointment/main.action">
 								<i class="fa fa-dashboard fa-fw"></i> 预约挂号管理
 						</a></li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/emr/main.action">
+							href="${pageContext.request.contextPath }/emr/main.action">
 								<i class="fa fa-edit fa-fw"></i> 电子病历管理
 						</a></li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/doctorvisits/main.action">
+							href="${pageContext.request.contextPath }/doctorvisits/main.action">
 								<i class="fa fa-dashboard fa-fw"></i> 医生问诊管理
 						</a></li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/health_Insurance/main.action">
+							href="${pageContext.request.contextPath }/health_Insurance/main.action">
 								<i class="fa fa-edit fa-fw"></i> 客户医保管理
 						</a></li>
 						<li><a
-							href="${pageContext.request.contextPath }/xiaosheng/information/main.action">
+							href="${pageContext.request.contextPath }/information/main.action">
 								<i class="fa fa-dashboard fa-fw"></i> 通知信息管理
 						</a></li>
 					</ul>
@@ -246,7 +246,7 @@ table .img {
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<form class="form-inline" method="get"
-						action="${pageContext.request.contextPath }/xiaosheng/customer/main.action">
+						action="${pageContext.request.contextPath }/customer/main.action">
 						<div class="form-group">
 							<label for="customerName">客户名称</label> <input type="text"
 								class="form-control" id="customerName"
@@ -301,7 +301,7 @@ table .img {
 						</table>
 						<div class="col-md-12 text-right">
 							<itheima:page
-								url="${pageContext.request.contextPath }/xiaosheng/customer/main.action" />
+								url="${pageContext.request.contextPath }/customer/main.action" />
 						</div>
 						<!-- /.panel-body -->
 					</div>
@@ -444,7 +444,7 @@ table .img {
 	
 	//创建用户
 	function createCustomer(){
-		$.post("<%=basePath%>xiaosheng/customer/add",
+		$.post("<%=basePath%>/customer/add",
 		$("#new_customer_form").serialize(),function(data){
 			if(data=="OK"){
 				alert("创建用户成功！");
@@ -459,7 +459,7 @@ table .img {
 	//删除用户
 	function deleteAll(id) {
 	    if(confirm('确实要删除该客户吗?')) {
-		$.post("<%=basePath%>xiaosheng/customer/deleteId",
+		$.post("<%=basePath%>/customer/deleteId",
 		{"id":id},
 		function(data){
 	            if(data == "OK"){
@@ -477,7 +477,7 @@ table .img {
 	function editCustomer(id){
 		$.ajax({
 			type: "post",
-			url : "<%=basePath%>xiaosheng/customer/byId",
+			url : "<%=basePath%>/customer/byId",
 			data: {"id":id},
 			success:function(data){
 				$("#edit_id").val(data.id);
@@ -492,7 +492,7 @@ table .img {
 	
 	//根据查询ID进行修改
 	function editCustomerDialogAll(){
-		$.post("<%=basePath%>xiaosheng/customer/Update",
+		$.post("<%=basePath%>/customer/Update",
 		$("#edit_customer_form").serialize(),
 		function(data){
 			if(data == "OK"){

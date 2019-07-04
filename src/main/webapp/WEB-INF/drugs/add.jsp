@@ -17,7 +17,7 @@
 		<h3>药品新增页面</h3>
 		<hr width="80%" style="border:1px solid #4590BB;"/><br />
 			
-		<form action="${pageContext.request.contextPath }/xiaosheng/drugs/add" enctype="multipart/form-data"
+		<form action="${pageContext.request.contextPath }/drugs/add" enctype="multipart/form-data"
 			 method="post" onsubmit="return addAll()" autocomplete="on" id="table">
 		名称：<input type="text" name="username"  id="border" required="required" placeholder="请输入名称"><br><br>
 		价格：<input type="text" name="price" id="border" required="required" placeholder="请输入价格"><br><br>

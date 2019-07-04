@@ -14,7 +14,7 @@
 		<h3>药品修改页面</h3>
 		<hr width="80%" style="border:1px solid #4590BB;"/><br />
 			
-		<form action="${pageContext.request.contextPath }/xiaosheng/drugs/Update" method="post" id="table">
+		<form action="${pageContext.request.contextPath }/drugs/Update" method="post" id="table">
 		编号：<input type="test" name="id" value="${drugs.id }" id="border" readonly="readonly"><br><br>
 		名称：<input type="test" name="username" value="${drugs.username }" id="border" required="required"><br><br>
 		价格：<input type="test" name="price" value="${drugs.price }" id="border" required="required"><br><br>

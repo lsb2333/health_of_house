@@ -28,7 +28,7 @@ public class CustomerController {
 			Customer customer = new Customer();
 			customer.setUsername("admin");
 			session.setAttribute("USER_SESSION", customer);
-			return "redirect:/xiaosheng/customer/main.action";
+			return "redirect:/customer/main.action";
 		}
 		model.addAttribute("msg", "账号或者密码错误");
 		return "/WEB-INF/views/login.jsp";

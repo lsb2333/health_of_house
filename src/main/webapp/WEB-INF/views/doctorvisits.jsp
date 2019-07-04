@@ -50,7 +50,7 @@
   <nav class="navbar navbar-default navbar-static-top" role="navigation"
 		 style="margin-bottom: 0">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="<%=basePath%>xiaosheng/customer/main.action">BOOT客户管理系统 v2.0</a>
+		<a class="navbar-brand" href="<%=basePath%>/customer/main.action">BOOT客户管理系统 v2.0</a>
 	</div>
 	<!-- 导航栏右侧图标部分 -->
 	<ul class="nav navbar-top-links navbar-right">
@@ -199,7 +199,7 @@
 				<li><a href="#"><i class="fa fa-gear fa-fw"></i> 系统设置</a></li>
 				<li class="divider"></li>
 				<li>
-					<a href="${pageContext.request.contextPath }/xiaosheng/outlogin">
+					<a href="${pageContext.request.contextPath }//outlogin">
 					<i class="fa fa-sign-out fa-fw"></i>退出登录
 					</a>
 				</li>
@@ -222,62 +222,62 @@
 					</div> 
 				</li>
 				<li>
-				    <a href="${pageContext.request.contextPath }/xiaosheng/customer/main.action">
+				    <a href="${pageContext.request.contextPath }/customer/main.action">
 				      <i class="fa fa-edit fa-fw"></i> 客户管理
 				    </a>
 				</li>
 				<li>
-				    <a href="${pageContext.request.contextPath }/xiaosheng/drugs/main.action">
+				    <a href="${pageContext.request.contextPath }/drugs/main.action">
 				      <i class="fa fa-dashboard fa-fw" ></i> 药品管理
 				    </a>
 				</li>
 				<li>
-				    <a href="${pageContext.request.contextPath }/xiaosheng/doctor/main.action">
+				    <a href="${pageContext.request.contextPath }/doctor/main.action">
 				      <i class="fa fa-edit fa-fw"></i> 医生管理
 				    </a>
 				</li>
 				<li>
-				    <a href="${pageContext.request.contextPath }/xiaosheng/management/main.action" >
+				    <a href="${pageContext.request.contextPath }/management/main.action" >
 				      <i class="fa fa-dashboard fa-fw" ></i> 健康管理
 				    </a>
 				</li>
 				<li>
-				    <a href="${pageContext.request.contextPath }/xiaosheng/disease/main.action" >
+				    <a href="${pageContext.request.contextPath }/disease/main.action" >
 				      <i class="fa fa-edit fa-fw"></i> 疾病症状管理
 				    </a>
 				</li>
 				<li>
-				    <a href="${pageContext.request.contextPath }/xiaosheng/physicians/main.action" >
+				    <a href="${pageContext.request.contextPath }/physicians/main.action" >
 				      <i class="fa fa-dashboard fa-fw" ></i> 医师讲解管理
 				    </a>
 				</li>
 				<li>
-				    <a href="${pageContext.request.contextPath }/xiaosheng/diseasecounseling/main.action">
+				    <a href="${pageContext.request.contextPath }/diseasecounseling/main.action">
 				      <i class="fa fa-edit fa-fw"></i> 疾病咨询管理
 				    </a>
 				</li>
 				<li>
-				    <a href="${pageContext.request.contextPath }/xiaosheng/appointment/main.action"  >
+				    <a href="${pageContext.request.contextPath }/appointment/main.action"  >
 				      <i class="fa fa-dashboard fa-fw" ></i> 预约挂号管理
 				    </a>
 				</li>
 				<li>
-				    <a href="${pageContext.request.contextPath }/xiaosheng/emr/main.action" >
+				    <a href="${pageContext.request.contextPath }/emr/main.action" >
 				      <i class="fa fa-edit fa-fw"></i> 电子病历管理
 				    </a>
 				</li>
 				<li>
-				    <a href="${pageContext.request.contextPath }/xiaosheng/doctorvisits/main.action" class="active" >
+				    <a href="${pageContext.request.contextPath }/doctorvisits/main.action" class="active" >
 				      <i class="fa fa-dashboard fa-fw" ></i> 医生问诊管理
 				    </a>
 				</li>
 				<li>
-				    <a href="${pageContext.request.contextPath }/xiaosheng/health_Insurance/main.action" >
+				    <a href="${pageContext.request.contextPath }/health_Insurance/main.action" >
 				      <i class="fa fa-edit fa-fw"></i> 客户医保管理
 				    </a>
 				</li>
 				<li>
-				    <a href="${pageContext.request.contextPath }/xiaosheng/information/main.action"  >
+				    <a href="${pageContext.request.contextPath }/information/main.action"  >
 				      <i class="fa fa-dashboard fa-fw" ></i> 通知信息管理
 				    </a>
 				</li>
@@ -326,7 +326,7 @@
 						</tbody>
 					</table>
 					<div class="col-md-12 text-right">
-						<itheima:page url="${pageContext.request.contextPath }/xiaosheng/doctorvisits/main.action" />
+						<itheima:page url="${pageContext.request.contextPath }/doctorvisits/main.action" />
 					</div>
 					<!-- /.panel-body -->
 				</div>

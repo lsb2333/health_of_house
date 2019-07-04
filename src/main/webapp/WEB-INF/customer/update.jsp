@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath }/xiaosheng/customer/Update" method="post">
+	<form action="${pageContext.request.contextPath }/customer/Update" method="post">
 		id:<input type="test" name="id" value="${customer.id }" readonly="readonly"><br><br>
 		username:<input type="test" name="username" value="${customer.username }"  required="required"><br><br>
 		password:<input type="test" name="password" value="${customer.password }" required="required"><br><br>

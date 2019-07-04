@@ -48,7 +48,7 @@
 						<font color="red"> <%-- 提示信息--%> <span id="message">${msg}</span>
 						</font>
 						<%-- 提交后的位置：/WEB-INF/jsp/customer.jsp--%>
-						<form action="${pageContext.request.contextPath }/xiaosheng/tologin"
+						<form action="${pageContext.request.contextPath }/tologin"
 							method="POST" onsubmit="return check()">
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
 							<br /> 账&nbsp;号：<input type="text" name="username" id="username"><br>

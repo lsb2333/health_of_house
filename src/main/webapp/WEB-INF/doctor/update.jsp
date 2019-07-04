@@ -11,7 +11,7 @@
 <body>
 	<div id="box">
 		<h3>医生修改信息</h3>
-		<form action="${pageContext.request.contextPath }/xiaosheng/doctor/Update" method="post" 
+		<form action="${pageContext.request.contextPath }/doctor/Update" method="post" 
 						autocomplete="on" id="table">
 		编号:<input type="test" name="id" value="${doctor.id }" id="border" readonly="readonly"><br><br>
 		名称:<input type="test" name="username" value="${doctor.username }" id="border"  required="required"><br><br>

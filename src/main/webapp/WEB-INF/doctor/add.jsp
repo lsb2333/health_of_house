@@ -18,7 +18,7 @@
 		<h3>医生新增页面</h3>
 		<hr width="80%" style="border:1px solid #4590BB;"/><br />
 		
-		<form action="${pageContext.request.contextPath }/xiaosheng/doctor/add" method="post" 
+		<form action="${pageContext.request.contextPath }/doctor/add" method="post" 
 		enctype="multipart/form-data" onsubmit="return addAll()" autocomplete="on" id="table">
 		名称：<input type="text" name="username" id="border" required="required"><br><br>
 		科类：<input type="text" name="section" id="border" required="required"><br><br>
