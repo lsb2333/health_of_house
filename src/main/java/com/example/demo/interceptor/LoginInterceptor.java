@@ -20,7 +20,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		
 		//获取session存储的对象
 		HttpSession session = request.getSession();
-		Customer customer = (Customer) session.getAttribute("USER_SESSION");
+		Customer customer = (Customer) session.getAttribute("CUSTOMER_SESSION");
 		if(customer != null) {
 			return true;
 		}

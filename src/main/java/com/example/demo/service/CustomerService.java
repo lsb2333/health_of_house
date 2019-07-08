@@ -2,8 +2,6 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
-
 import com.example.demo.domain.Customer;
 import com.example.demo.utils.Page;
 
@@ -25,8 +23,14 @@ public interface CustomerService {
 	public int deleteCustomer(Integer id);
 	
 	//根据id查询信息
-	public Customer findById(@Param("id") int id);
+	public Customer findById(int id);
 	
 	//根据id更新用户
 	public int updateCustomer(Customer customer);
+
+	public Customer findCus(String username, String password);
+
+	public Customer findByUsername(String username);
+	
+	public boolean insertCus(String username, String names, String password);
 }

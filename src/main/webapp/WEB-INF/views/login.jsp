@@ -59,6 +59,14 @@
 								<input type="submit" value="登录" >
 							</center>
 						</form>
+						
+						<form action="${pageContext.request.contextPath }/register" 
+				                       method="get" onsubmit="return true">
+			
+	        			<input style="float: right;" type="submit" value="注册" />
+	       
+						 </form>
+						
 					</fieldset>
 				</td>
 			</tr>

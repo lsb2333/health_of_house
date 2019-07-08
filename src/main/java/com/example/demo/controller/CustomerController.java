@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import com.example.demo.domain.Customer;
 import com.example.demo.service.CustomerService;
 import com.example.demo.utils.Page;
 
+
 @Controller
 public class CustomerController {
 	
@@ -24,15 +27,42 @@ public class CustomerController {
 	public String login(@RequestParam("username") String username, //
 						@RequestParam("password") String password, //
 						Model model , HttpSession session ) {
-		if(username.equals("admin") && password.equals("123")) {
-			Customer customer = new Customer();
-			customer.setUsername("admin");
-			session.setAttribute("USER_SESSION", customer);
+		
+		//通过账户和密码查询用户
+		Customer customer = customerService.findCus(username, password);
+		if(customer != null) {
+			// 将用户添加到sessionuser
+			session.setAttribute("CUSTOMER_SESSION", customer);
+			// 跳转到主页面
 			return "redirect:/customer/main.action";
 		}
-		model.addAttribute("msg", "账号或者密码错误");
+		model.addAttribute("msg", "账号或密码错误");
 		return "/WEB-INF/views/login.jsp";
 	}
+	
+	
+	
+	@RequestMapping("register")
+	public String toRegister() {
+		return "/WEB-INF/views/register.jsp";
+	}
+
+	/**
+     * 用户注册
+     */
+    @RequestMapping(value="/register.action")
+    public String register(Customer cus, Map<String,Object> map) {
+    	Customer username = customerService.findByUsername(cus.getUsername());
+    	
+    	System.out.println("user_code="+username);
+    	if(username == null) {
+    		customerService.insertCus(cus.getUsername(), cus.getNames(), cus.getPassword());
+        	map.put("msg", "注册成功！");
+    		return "/WEB-INF/views/success.jsp";
+    	}
+    	map.put("msg","该账户已经存在，请重新注册！");
+		return "register";
+    }
 	
 	/**
 	 *  客户列表

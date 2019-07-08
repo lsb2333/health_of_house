@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
+Built-By: lsb
+Build-Jdk: 11.0.2
 Implementation-Title: health_of_house
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: zzr
 Implementation-Vendor-Id: com.example.demo
-Build-Jdk: 1.8.0_131
-Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/health_of_house
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/health_of_house
 Created-By: Maven Integration for Eclipse
 

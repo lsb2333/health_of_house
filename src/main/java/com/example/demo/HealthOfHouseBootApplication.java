@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
 @Controller
+@MapperScan("com.example.demo.dao")
 public class HealthOfHouseBootApplication extends SpringBootServletInitializer{
 
 	//进入登录页面

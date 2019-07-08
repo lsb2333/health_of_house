@@ -82,4 +82,20 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerMapper.updateCustomer(customer);
 	}
 
+	@Override
+	public Customer findCus(String username, String password) {
+		return customerMapper.findCus(username, password);
+	}
+
+	@Override
+	public Customer findByUsername(String username) {
+		return customerMapper.findByUsername(username);
+	}
+
+	@Override
+	public boolean insertCus(String username, String names, String password) {
+		return customerMapper.insertCus(username,names,password);
+		
+	}
+
 }
