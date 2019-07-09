@@ -22,6 +22,11 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 	
+	@RequestMapping("login")
+	public String login() {
+		return "redirect:/";
+	}
+	
 	//判断登录
 	@RequestMapping("tologin")
 	public String login(@RequestParam("username") String username, //

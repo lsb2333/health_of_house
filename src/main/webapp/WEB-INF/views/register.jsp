@@ -64,7 +64,7 @@ function register(){
           <center><input type="submit" value="注册" /></center>
 		 </form>
 		 
-		 <form action="${pageContext.request.contextPath }/tologin" 
+		 <form action="${pageContext.request.contextPath }/login" 
 				                       method="get" onsubmit="return true">
 			
 	        <input style="float: right;" type="submit" value="登录" />
